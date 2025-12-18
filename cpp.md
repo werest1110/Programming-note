@@ -1,7 +1,7 @@
 ## C5 ARRAY 
 # 5.1 Declaring Array
 
-'''cpp
+```cpp
 #include <iostream>
 using namespace std;
 
