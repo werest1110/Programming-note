@@ -4,4 +4,4 @@
 ```cpp
 int tests[5];
 ```
-
+![cout](/images/example.png)
