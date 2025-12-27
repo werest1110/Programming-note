@@ -24,7 +24,7 @@ test[2]++;  // =2+1=3
 test[2++];  // =test[3]=5
 ```
 
-## 5.4 Finding Highest and Low *(Comparing)*
+## 5.4.1 Finding Highest and Low *(Comparing)*
 ```cpp
 ///Highest
 int highest = number[0];
@@ -44,6 +44,26 @@ for (int cnt=1; cnt<SIZE; cnt++)
     {
         lowest = number[cnt];
     }
+}
+```
+
+## 5.4.2 While loop in Array
+```cpp
+int test[5];
+int num;
+
+for (int i=0; i<5; i++)
+{
+    cout << "Enter a positivie number: ";
+    cin >> num;
+
+    while (num<0)
+    {
+        cout << "Invalid Input. Please Enter again: ";
+        cin >> num
+    }
+
+    test[i] = num;
 }
 ```
 
