@@ -20,8 +20,8 @@ char fname[6] = "Henry";
 ```cpp
 int test[]={1,2,5};
 
-test[2]++;  // =2+1=3      
-test[2++];  // =test[3]=5
+test[2]++;  // Add 1 to test[i]                 // =2+1=3           
+test[2++];  // Add 1 to i, not affect the test  // =test[3]=5
 ```
 
 ## 5.4.1 Finding Highest and Low *(Comparing)*
