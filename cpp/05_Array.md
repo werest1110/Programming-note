@@ -10,11 +10,14 @@ int tests[SIZE];
 ```
 ## 5.2 Store with string
 ```cpp
-char fname[6] = "Henry";
+char fname[6] = "Henry"; // 6 is size declator
 ```
 |H  | e |n  |r  |y  |\0 |*Total*
 |-  |-  |-  |-  |-  |-  |-
-|0  |1  |2  |3  |4  |5  |6 space
+|0  |1  |2  |3  |4  |5  |6 space  
+
+// 0-5 is the subscript
+
 
 ## 5.3 Different btw test[i++] and test[i]++
 ```cpp
@@ -111,7 +114,7 @@ const int ROWS = 4, COLS = 3;
 int a [ROWS][COLS];
 
 //Prototype
-void getExam(int[][],int);
+void getExam(int[][COLS],int);
 
 //Header
 void getExam(int[][COLS], int rows) 
