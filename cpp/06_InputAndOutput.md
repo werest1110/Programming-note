@@ -31,6 +31,7 @@ cout << fixed << showpoint; //fixed higher priority than showpoint
 cout << x;     //Output: 15.674000
 ```
 
+
 ### 3. setprecision(n)
 ```cpp
 //without fixed
@@ -97,11 +98,13 @@ cin.ignore(10, '\n');
 //library
 #include <ifstream>      //input file
 #include <ofstream>      //output file
-#include <fstream>       //both input and output
+#include <fstream>       //both input and output (normally put this)
 
 //declare
 ofstream outfile;
-ifstream infile;         //then baru boleh open file
+ifstream infile;         
+
+//then baru boleh open file
 ```
 
 ### 1. Opening File
