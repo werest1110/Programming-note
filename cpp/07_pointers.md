@@ -153,9 +153,112 @@ ptr = &extra;           // Error
 |Type|Can change address? | Can change data?
 |:-: |:-: | :-:
 |**Regular**|Yes | Yes
-|**Pointer to Constant**| No| Yes 
-|**Constant Pointer**| Yes|No
+|**Pointer to Constant**| Yes| No
+|**Constant Pointer**| No|Yes
 |**Constant Pointer to Constant**|No | No
+
+## 7.8 Dynamic Memory Allocation
+### 1) new
+- make a valid address with garbage value
+```cpp
+// Three output address will be different but the output is the reference only
+int main()
+{
+    int *a = new int;
+    cout << new int << endl;    //Output = 0x100
+    int *b = new int; 
+    cout << new int << endl;    //Output = 0x200
+    int *c = new int;
+    cout << new int << endl;    //Output = 0x300
+}
+
+int main()
+{
+    for (int i=0; i<numDays; i++)
+    {
+        cout << "Address is " << new int << endl;       //every value[i] the address will be different (each box hold a new valid address with empty value)
+        cout << "Enter a value: ";
+        cin >> value[i];
+    }
+}
+```
+```cpp
+//normal variable
+
+int* ptr = new int;  //create a valid address(0x100)
+*ptr = 35;
+cout << *ptr;       // Output = 35
+cout << *new int;   // Output = 0   //create again a valid address(0x200)
+```
+
+```cpp
+//array (use hotel room and check out scenario)
+
+cout << "Enter number of Day: ";
+cin >> numDays;
+
+int *values = new double[numDays]; 
+// Here will create a Dynamic memory with numDays size and store in the value pointer 
+
+for (int i; i<numDays ; i++)
+{
+    cout << "Enter a value: ";
+    cin >> value[i];
+}
+```
+
+### 2) delete
+```cpp
+//normal variable
+int *ptr = new int;
+delete ptr;
+
+//array
+int *value = new int[numDays];\
+delete [] value;
+```
+
+## Returning Pointers from Functions
+
+```cpp
+// Rule 1: must not return a pointer to a **local variable** in function
+int* returnLocal() 
+{
+    int number = 100;    
+    return &number;      //number is destroy after out of function
+}
+```
+```cpp
+// Rule 2: must return to data that pass as **argument**
+int* findLarger(int* a, int* b) 
+{
+    if (*a > *b) 
+        return a;  
+    else 
+        return b;  
+}
+int main()
+{
+    int x = 10, y = 20;
+    int* result = findLarger(&x, &y);
+}
+```
+```cpp
+// Rule 3: must return to **dynamic memory**
+int* createArray(int size) 
+{
+    int* arr = new int[size]; 
+    arr[0] = 50;
+    return arr;            
+}
+int main()
+{
+    int* myPtr = createArray(5);
+    cout << myPtr[0];   // Output = 50
+    cout << myPtr[3];   // Output = garbage value
+    delete[] myPtr;
+}        
+```
 
 
 
