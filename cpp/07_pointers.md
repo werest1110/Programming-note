@@ -218,7 +218,7 @@ int *value = new int[numDays];\
 delete [] value;
 ```
 
-## Returning Pointers from Functions
+## 7.9 Returning Pointers from Functions
 
 ```cpp
 // Rule 1: must not return a pointer to a **local variable** in function
