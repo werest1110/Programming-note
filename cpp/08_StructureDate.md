@@ -200,11 +200,72 @@ int main()
 }
 ```
 
+## 8.9 Enumerated Data Types
+### 1) Declared
+```cpp
+enum Day {MONDAY, TUESDAY, WEDNESDAY};  //Inside it not string, is identifier
+//MONDAY = 0
+//TUESDAY = 1
+```
 
+```cpp
+Day workday;
+workday = MONDAY;
+```  
+
+### 2) Assign integer to variable
+```cpp
+workday = 3;                        // NO WORK 
+workday = THURSDAY;                 // WORK 
+workday = static_cast<Day>(3);      // WORK 
+```
+### 3) Assign enum to int variable
+```cpp
+int x;
+x = THURSDAY;
+```
+
+### 4) Comparing enum
+```cpp
+if (FRIDAY > MONDAY)
+{
+    cout << ......;
+}
+```
+
+### 5) Use enum in LOOP
+```cpp
+for (int i = MONDAY; i< FRIDAY; i++)
+{
+    ...
+}
+```
+
+```cpp
+// cannot use workday++ !!!!!
+Day workday;
+for (workday = MONDAY; workday <= FRIDAY; static_cast<Day>(workday+1))
+{
+    ...
+}
+```
+### 6) Anonymous Enum Type
+```cpp
+enum {MONDAY, TUSEDAY, WEDNESDAY};
+```
+
+### 7) Using Math Operator
+```cpp
+Day day1,day2;
+day1 = TUESDAY;     // Work 
+day2 = day1 + 1;    // No Work
+day2 = static_cast<Day>(day1 + 1);  // Work
+```
 
 ## Grammar mistake
 ```cpp
 Student a;
-cout << a;      //wont work
-cout << a.gpa;  //work
+cout << a;      // NO work
+cout << a.gpa;  // work
 ```
+
