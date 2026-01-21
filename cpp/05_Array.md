@@ -22,9 +22,9 @@ char fname[6] = "Henry"; // 6 is size declator
 ## 5.3 Different btw test[i++] and test[i]++
 ```cpp
 int test[]={1,2,5};
-
-test[2]++;  // Add 1 to test[i]                 // =2+1=3           
-test[2++];  // Add 1 to i, not affect the test  // =test[3]=5
+int i=2;
+test[i]++;  // Add 1 to test[i]                 // =2+1=3           
+test[i++];  // Add 1 to i, not affect the test  // =test[3]=5
 ```
 
 ## 5.4.1 Finding Highest and Low *(Comparing)*
