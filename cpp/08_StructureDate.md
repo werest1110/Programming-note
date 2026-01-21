@@ -191,7 +191,7 @@ int main()
     Student *stu1;
     stu1 = &ya;
 
-    getData(stu1);
+    getData(stu1);  //Here pass the pointer //if it is a normal variable need to use & cuz u are passing the address inside function not the variable
 
     cout << (*stu1).name << endl;
     cout << (*stu1).gpa;

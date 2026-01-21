@@ -10,8 +10,8 @@ cout << "The address of x is " << &x << endl;   //using &
 ```
 
 ```cpp
-* = "go to the address stored in and look its value"
-& = "Address of the operator"
+* = "go to the address stored in and look its value"    // (Dereference)
+& = "Address of the operator"                           // (Reference)
 ```
 
 ## 7.2 Pointer Variable
@@ -93,6 +93,27 @@ if (ptr1 == ptr2)
 ```
 
 ## 7.7 Pointers as Function Parameters
+```cpp
+void swap(int *x, int *y)   //dereference it to go in address and check the value
+{
+    int temp = *x;
+    *x = *y;
+    *y = temp;
+}
+
+int main()
+{
+    int num1=2,num2=-3;
+
+    swap(&num1, &num2);     //call by address
+
+    cout << "1 " << num1 << endl;
+    cout << "2 " << num2 << endl;
+
+
+    return 0;
+}
+```
 ### 1) Pointer to Constant
 If a data using **const** means that the value can't be change. Hence, if we gonna to **store it in a pointer** we have to use **Pointer-to-const**.
 ```cpp
